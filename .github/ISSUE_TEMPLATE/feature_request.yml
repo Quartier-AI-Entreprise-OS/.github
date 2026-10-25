@@ -58,17 +58,6 @@ body:
       required: true
 
   - type: textarea
-    id: scope
-    attributes:
-      label: Scope
-      description: What is in and what is explicitly out.
-      placeholder: |
-        In:
-        - ...
-        Out:
-        - ...
-
-  - type: textarea
     id: acceptance
     attributes:
       label: Acceptance criteria
