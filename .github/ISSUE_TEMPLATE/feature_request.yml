@@ -95,16 +95,3 @@ body:
     id: alternatives
     attributes:
       label: Alternatives considered
-
-  - type: checkboxes
-    id: impact
-    attributes:
-      label: Impact
-      description: Tick what this feature will touch. The same list appears in the PR template.
-      options:
-        - label: Database schema or Drizzle migration
-        - label: API or tRPC contract change
-        - label: New or changed i18n strings
-        - label: Mobile app affected
-        - label: Env vars, infra or CI change
-        - label: Documentation update
