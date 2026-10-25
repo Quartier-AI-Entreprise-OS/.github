@@ -33,17 +33,6 @@ body:
       placeholder: bailiffs
 
   - type: dropdown
-    id: environment
-    attributes:
-      label: Environment
-      options:
-        - production
-        - staging
-        - local
-    validations:
-      required: true
-
-  - type: dropdown
     id: severity
     attributes:
       label: Severity

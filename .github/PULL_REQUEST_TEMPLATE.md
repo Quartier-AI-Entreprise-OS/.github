@@ -10,14 +10,11 @@ Closes #
 - [ ] Feature
 - [ ] Chore / refactor
 - [ ] Docs
-- [ ] Hotfix (goes straight to production)
 - [ ] Release (development → main)
 
-## Changes
+## Changes (list the changes made below)
 
 <!-- Bullet list of what was done. Mention anything not obvious from the diff. -->
-
--
 
 ## Impact
 
@@ -25,12 +22,10 @@ Closes #
 
 - [ ] Database schema or Drizzle migration
 - [ ] API or tRPC contract change
-- [ ] New or changed i18n strings
-- [ ] Mobile app affected
-- [ ] Env vars, infra or CI change (list new vars in "Deployment notes")
+- [ ] Mobile app affected - if present
 - [ ] Breaking change
 
-## How it was tested
+## Tests
 
 <!-- Unit / e2e / manual. Include the commands you ran. -->
 
