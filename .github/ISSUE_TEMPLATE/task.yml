@@ -1,0 +1,77 @@
+name: Task
+description: research, spike, brainstorm, investigation, decision to make
+labels: ["type: task"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for work that produces knowledge or a decision: research a library, investigate an approach, brainstorm a flow.
+        If the outcome is "implement X", open a Feature instead. If something is broken, open a Bug.
+
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: What question are we trying to answer, or what decision do we need to make?
+      placeholder: Decide whether we replace X with Y for ...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind
+      options:
+        - research
+        - brainstorm / design
+        - investigation
+        - spec / documentation
+        - other
+    validations:
+      required: true
+
+  - type: textarea
+    id: deliverable
+    attributes:
+      label: Expected deliverable
+      description: What "done" looks like. A written summary in this issue, a doc, a decision, a prototype branch, a list of follow-up Features, ...
+      placeholder: A comparison table in a comment on this issue and a recommendation.
+    validations:
+      required: true
+
+  - type: textarea
+    id: questions
+    attributes:
+      label: Questions to answer
+      description: Specific points the deliverable must cover.
+      placeholder: |
+        - [ ] ...
+        - [ ] ...
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context and links
+      description: Why this came up, what we already know, relevant docs, code, issues or external resources.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - api
+        - web
+        - worker
+        - mobile
+        - package (domain package)
+        - infra / CI
+        - docs
+        - product / UX
+        - cross-cutting
+
+  - type: input
+    id: related
+    attributes:
+      label: Related issues
+      description: Feature or Bug this task feeds into, if any.
+      placeholder: "#42"

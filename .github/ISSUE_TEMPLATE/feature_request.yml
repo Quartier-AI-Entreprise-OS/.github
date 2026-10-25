@@ -1,51 +1,112 @@
 name: Feature request
-description: Suggest an idea or improvement
-title: "[Feature]: "
-labels: [enhancement]
+description: Propose a new capability or an improvement to an existing one
+labels: ["type: feature"]
 body:
   - type: markdown
     attributes:
-      value: Thanks for the suggestion! Please fill in the details below.
+      value: |
+        A Feature is something to build: a new capability or an improvement to an existing one. It should fit in one PR; if it needs several, split it.
+        Keep the title short and descriptive; it is used for the branch name.
+
   - type: textarea
     id: problem
     attributes:
-      label: Problem
-      description: What problem are you trying to solve? What's frustrating today?
-      placeholder: I'm always frustrated when...
+      label: Problem or user need
+      description: Who needs this, what they are trying to do, and why it matters now.
+      placeholder: Dispatchers need to ... because ...
     validations:
       required: true
+
   - type: textarea
     id: solution
     attributes:
       label: Proposed solution
-      description: Describe how you'd like this to work.
+      description: How it should work from the user's point of view.
     validations:
       required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - api
+        - web
+        - worker
+        - mobile
+        - package (domain package)
+        - infra / CI
+        - docs
+        - cross-cutting
+    validations:
+      required: true
+
+  - type: input
+    id: package
+    attributes:
+      label: Package or module
+      placeholder: fleet
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: Blocking = a client, contract or deadline depends on it. Important = planned for the next release. Nice to have = whenever there is room.
+      options:
+        - blocking
+        - important
+        - nice to have
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: What is in and what is explicitly out.
+      placeholder: |
+        In:
+        - ...
+        Out:
+        - ...
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Observable conditions the PR must satisfy. Each item should be verifiable.
+      placeholder: |
+        - [ ] ...
+        - [ ] ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: design
+    attributes:
+      label: Mockups or design links
+      description: Figma links, screenshots, sketches.
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Technical notes or approach
+      description: Files to touch, patterns to follow, constraints, things to avoid. Helpful when an agent picks this up.
+
   - type: textarea
     id: alternatives
     attributes:
       label: Alternatives considered
-      description: Any other approaches or workarounds you've thought about?
-  - type: dropdown
-    id: priority
-    attributes:
-      label: How important is this to you?
-      options:
-        - Nice to have
-        - Would improve my workflow
-        - Blocking me
-    validations:
-      required: true
-  - type: textarea
-    id: context
-    attributes:
-      label: Additional context
-      description: Screenshots, mockups, links to related issues, etc.
+
   - type: checkboxes
-    id: checks
+    id: impact
     attributes:
-      label: Checklist
+      label: Impact
+      description: Tick what this feature will touch. The same list appears in the PR template.
       options:
-        - label: I searched existing issues and this hasn't been requested yet
-          required: true
-        - label: I'm willing to help implement this
+        - label: Database schema or Drizzle migration
+        - label: API or tRPC contract change
+        - label: New or changed i18n strings
+        - label: Mobile app affected
+        - label: Env vars, infra or CI change
+        - label: Documentation update

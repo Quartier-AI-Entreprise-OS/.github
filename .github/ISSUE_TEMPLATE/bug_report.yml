@@ -1,0 +1,112 @@
+name: Bug report
+description: Something is broken or behaves differently than expected
+labels: ["type: bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Fill in enough for someone (or an agent) to reproduce and start fixing without asking you back.
+        Keep the title short and descriptive.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      description: Where the bug lives.
+      options:
+        - api
+        - web
+        - worker
+        - mobile
+        - package (domain package)
+        - infra / CI
+        - docs
+        - unsure
+    validations:
+      required: true
+
+  - type: input
+    id: package
+    attributes:
+      label: Package or module
+      description: Monorepo package or feature module if known (e.g. `bailiffs`, `dispatches`, `human-resources`).
+      placeholder: bailiffs
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Environment
+      options:
+        - production
+        - staging
+        - local
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: Blocker = service down, data loss or a client cannot work. Major = a feature is unusable with no workaround. Minor = wrong but there is a workaround. Cosmetic = visual or wording only.
+      options:
+        - blocker
+        - major
+        - minor
+        - cosmetic
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Go to ...
+        2. Click ...
+        3. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behaviour
+      description: What happens instead. Paste error messages, stack traces or log lines here.
+      render: text
+    validations:
+      required: true
+
+  - type: dropdown
+    id: regression
+    attributes:
+      label: Did this work before?
+      options:
+        - "yes, it used to work"
+        - "no, never worked"
+        - unknown
+
+  - type: input
+    id: tenant
+    attributes:
+      label: Tenant or account affected
+      description: Tenant slug or account id if the bug is tenant-specific. No personal data.
+      placeholder: acme-inc
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots or recording
+      description: Drag and drop images or videos here.
+
+  - type: textarea
+    id: cause
+    attributes:
+      label: Suspected cause or related code
+      description: Files, functions, migrations or recent PRs you think are involved. Helpful when an agent picks this up.
