@@ -14,8 +14,6 @@ body:
       label: Goal
       description: What question are we trying to answer, or what decision do we need to make?
       placeholder: Decide whether we replace X with Y for ...
-    validations:
-      required: true
 
   - type: dropdown
     id: kind
@@ -27,8 +25,6 @@ body:
         - investigation
         - spec / documentation
         - other
-    validations:
-      required: true
 
   - type: textarea
     id: deliverable
@@ -36,8 +32,6 @@ body:
       label: Expected deliverable
       description: What "done" looks like. A written summary in this issue, a doc, a decision, a prototype branch, a list of follow-up Features, ...
       placeholder: A comparison table in a comment on this issue and a recommendation.
-    validations:
-      required: true
 
   - type: textarea
     id: questions

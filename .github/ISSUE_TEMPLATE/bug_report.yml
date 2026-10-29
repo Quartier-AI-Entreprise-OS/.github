@@ -22,8 +22,6 @@ body:
         - infra / CI
         - docs
         - unsure
-    validations:
-      required: true
 
   - type: input
     id: package
@@ -42,8 +40,6 @@ body:
         - major
         - minor
         - cosmetic
-    validations:
-      required: true
 
   - type: textarea
     id: steps
@@ -53,15 +49,11 @@ body:
         1. Go to ...
         2. Click ...
         3. ...
-    validations:
-      required: true
 
   - type: textarea
     id: expected
     attributes:
       label: Expected behaviour
-    validations:
-      required: true
 
   - type: textarea
     id: actual
@@ -69,8 +61,6 @@ body:
       label: Actual behaviour
       description: What happens instead. Paste error messages, stack traces or log lines here.
       render: text
-    validations:
-      required: true
 
   - type: dropdown
     id: regression
